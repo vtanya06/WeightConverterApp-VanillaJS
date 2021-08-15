@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <meta hrrp-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" 
+        crossorigin="anonymous">
+        <style>
+            body{
+                margin-top: 50px;
+                background: #444;
+                color: #fff;
+            }
+        </style>
+        <title>WEIGHT CONVERTER APP</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <h1 class="display-5 text-center mb-4">
+                        WEIGHT CONVERTER
+                    </h1>
+                    <form>
+                        <div class="form-group">
+                            <input type="number" class="form-control form-control-lg"
+                            placeholder="ENTER WEIGHT IN POUNDS" id="inpu">
+                        </div>
+                    </form>
+                    <div id="output">
+                        <div class="card bg-primary mb-3">
+                            <div class="card-block">
+                                <h4 class="ml-4 mt-1">Grams:</h4>
+                                <div id="gramsResult" class="ml-4 mb-2"></div>
+                            </div>
+                        </div> 
+                        <div class="card bg-success mb-3">
+                            <div class="card-block">
+                                <h4 class="ml-4 mt-1">Ounces:</h4>
+                                <div id="ouncesResult" class="ml-4 mb-2"></div>
+                            </div>
+                        </div> 
+                        <div class="card bg-danger mb-3">
+                            <div class="card-block">
+                                <h4 class="ml-4 mt-1">KiloGrams:</h4>
+                                <div id="kGResult" class="ml-4 mb-2"></div>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.getElementById('output').style.visibility="hidden";
+            document.getElementById('inpu').addEventListener('input',function(e){
+                document.getElementById('output').style.visibility="visible";
+                let val=e.target.value;
+                console.log(val);
+                document.getElementById('gramsResult').innerHTML=val/0.0022046;
+                document.getElementById('kGResult').innerHTML=val/2.2046;
+                document.getElementById('ouncesResult').innerHTML=val*16;
+           });
+        </script>
+    </body>
+</html>
